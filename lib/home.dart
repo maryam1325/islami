@@ -2,9 +2,16 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   static const String routeName= "home";
-  const HomeScreen({super.key});
+   HomeScreen({super.key});
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+   int selectedindex=0;
 
   @override
   Widget build(BuildContext context) {
@@ -22,17 +29,35 @@ class HomeScreen extends StatelessWidget {
             ),),
           ),
           bottomNavigationBar: BottomNavigationBar(
+            currentIndex: selectedindex,
+            onTap: (index){
+              selectedindex=index;
+              setState(() {
+
+              });
+            },
             showSelectedLabels: false,
             showUnselectedLabels: false,
+            type: BottomNavigationBarType.fixed,
             backgroundColor: Color(0xffB7935F),
             selectedItemColor: Colors.black,
             unselectedItemColor: Colors.white,
             items: [
-            BottomNavigationBarItem(icon: ImageIcon(AssetImage("assets/images/quran.png")),label: "quran"),
-            BottomNavigationBarItem(icon: ImageIcon(AssetImage("assets/images/sebha.png")),label: "sebha"),
-            BottomNavigationBarItem(icon: ImageIcon(AssetImage("assets/images/radio.png")),label: "radio"),
-            BottomNavigationBarItem(icon: ImageIcon(AssetImage("assets/images/ahadeth.png")),label: "ahadeth"),
-            BottomNavigationBarItem(icon: Icon(Icons.settings),label: "settings"),
+            BottomNavigationBarItem(
+                backgroundColor: Color(0xffB7935F),
+                icon: ImageIcon(AssetImage("assets/images/quran.png")),label: "quran"),
+            BottomNavigationBarItem(
+                backgroundColor: Color(0xffB7935F),
+                icon: ImageIcon(AssetImage("assets/images/sebha.png")),label: "sebha"),
+            BottomNavigationBarItem(
+                backgroundColor: Color(0xffB7935F),
+                icon: ImageIcon(AssetImage("assets/images/radio.png")),label: "radio"),
+            BottomNavigationBarItem(
+                backgroundColor: Color(0xffB7935F),
+                icon: ImageIcon(AssetImage("assets/images/ahadeth.png")),label: "ahadeth"),
+            BottomNavigationBarItem(
+                backgroundColor: Color(0xffB7935F),
+                icon: Icon(Icons.settings),label: "settings"),
 
           ],),
         ),
