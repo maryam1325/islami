@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:islami/home.dart';
+import 'package:islami/home/home.dart';
 
 void main() {
   runApp( MyApp());

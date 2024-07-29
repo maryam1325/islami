@@ -1,6 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:islami/home/tabs/ahadeth_tab.dart';
+import 'package:islami/home/tabs/quran_tab.dart';
+import 'package:islami/home/tabs/radio_tab.dart';
+import 'package:islami/home/tabs/sebha_tab.dart';
+import 'package:islami/home/tabs/settings_tab.dart';
 
 class HomeScreen extends StatefulWidget {
   static const String routeName= "home";
@@ -60,8 +65,16 @@ class _HomeScreenState extends State<HomeScreen> {
                 icon: Icon(Icons.settings),label: "settings"),
 
           ],),
+          body: tabs[selectedindex],
         ),
       ],
     );
   }
+  List<Widget> tabs=[
+    quranTab(),
+    sebhaTab(),
+    radioTab(),
+    ahadethTab(),
+    settingsTab()
+  ];
 }
